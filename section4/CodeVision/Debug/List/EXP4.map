@@ -1,0 +1,52 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+dah_daqiqe                                                                        0x0160       2
+saat                                                                              0x0162       2
+dahsaat                                                                           0x0164       2
+start                                                                             0x0166       2
+stop                                                                              0x0168       2
+parking                                                                           0x016A       2
+_base_y                                                                           0x016C       4
+_lcd_x                                                                            0x0170       1
+_lcd_y                                                                            0x0171       1
+_lcd_maxx                                                                         0x0172       1
+_seed                                                                             0x0173       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+sadom                                                                             R4,R5        2
+dahom                                                                             R6,R7        2
+sanie                                                                             R8,R9        2
+dahsanie                                                                          R10,R11      2
+daqiqe                                                                            R12,R13      2
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+ext_int0_isr                                                                      0x0008F      4
+ext_int1_isr                                                                      0x00093      4
+ext_int2_isr                                                                      0x00097      4
+timer0_ovf_isr                                                                    0x0009B     17
+main                                                                              0x000AC     36
+Q1_time0                                                                          0x000D0    109
+Q1_int1                                                                           0x0013D     63
+Q2                                                                                0x0017C     79
+Q3                                                                                0x001CB     43
+_lcd_write_nibble_G100                                                            0x001F6     20
+_lcd_write_data                                                                   0x0020A     12
+lcd_gotoxy                                                                        0x00216     17
+lcd_clear                                                                         0x00227     14
+lcd_putchar                                                                       0x00235     32
+lcd_puts                                                                          0x00255     17
+lcd_init                                                                          0x00266     47
+put_buff_G101                                                                     0x00295     64
+_print_G101                                                                       0x002D5    308
+sprintf                                                                           0x00409     52
+strlen                                                                            0x0043D     12
+strlenf                                                                           0x00449     13

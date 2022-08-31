@@ -1,0 +1,13 @@
+#ifndef _myheader_INCLUDED_
+#define _myheader_INCLUDED_
+
+#include ".\source\allheaders.h"
+
+void Q1_time0(void);
+void Q1_int1(void);
+void Q2(void);
+void Q3(void);
+
+
+
+#endif

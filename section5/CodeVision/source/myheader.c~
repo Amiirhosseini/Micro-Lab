@@ -1,0 +1,84 @@
+#include ".\source\allheaders.h"
+
+
+int i=0;
+extern int speed=0;
+extern int rotate=0;
+int dataL,dataH,data1,data2,rpm=0,rpmi2,T;
+int flagi=0,flagi2=1;
+
+
+void Q4(void)
+{
+ int input;
+ input = PINA;
+ 
+ OCR0= 0.99*input + 0.5;   //rabeteye be dast amade
+
+}
+
+
+void Q5_clockwise(void)
+{
+    i++;
+    switch(i){
+    case 1: PORTB= 0x30;delay_ms(20); break;
+    case 2: PORTB= 0x60;delay_ms(20); break;
+    case 3: PORTB= 0xc0;delay_ms(20); break;
+    case 4: PORTB= 0x90;delay_ms(20); i=0; break;
+    }
+
+}
+
+void Q5_inv(void)
+{
+    i++;
+    switch(i){
+    case 1: PORTB= 0xc0;delay_ms(20); break;
+    case 2: PORTB= 0x60;delay_ms(20); break;
+    case 3: PORTB= 0x30;delay_ms(20); break;
+    case 4: PORTB= 0x90;delay_ms(20); i=0; break;
+    }
+
+}
+
+
+void Q6(void)
+{
+  char display[20];
+
+//read from ICR
+dataL=ICR1L;
+dataH=ICR1H;
+
+
+if(flagi==0)
+{
+  data1=dataH<<8|dataL;
+  flagi2=0;
+}
+
+if(flagi2==0)
+{
+    data2=dataH<<8|dataL;
+    flagi=0;
+}
+
+if(flagi!=0 && flagi2!=0)
+{
+ T=(data2-data1)*1000;
+ rpm=T*50;
+}
+
+//if(abs(rpmi2-rpm)>5)
+//{
+ rpm=data1;
+ //lcd_clear();
+ lcd_gotoxy(0,1);
+ sprintf(display,"%d",rpm);
+ lcd_puts(display); 
+ rpmi2=rpm;
+//}
+
+  
+}

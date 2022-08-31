@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:547E6F2B
+NODE:I LEVEL:0 LINE:24 "E:\in progress 2\Microprocessor\Lab\5\final\.\source\myheader.h"
+NODE:V LEVEL:0 LINE:26 "speed -> RAM:????"
+NODE:V LEVEL:0 LINE:27 "rotate -> RAM:????"
+NODE:F LEVEL:0 LINE:30 "timer1_capt_isr(void)"
+NODE:F LEVEL:0 LINE:37 "timer2_ovf_isr(void)"
+NODE:F LEVEL:0 LINE:75 "main(void)"

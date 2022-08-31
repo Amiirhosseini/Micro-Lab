@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:547E6E66
+NODE:M LEVEL:0 LINE:2 "_allheaders_INCLUDED_"
+NODE:I LEVEL:0 LINE:4 "D:\code vision\inc\mega16.h"
+NODE:I LEVEL:0 LINE:5 "D:\code vision\inc\alcd.h"
+NODE:I LEVEL:0 LINE:6 "D:\code vision\inc\stdio.h"
+NODE:I LEVEL:0 LINE:7 "D:\code vision\inc\stdlib.h"
+NODE:I LEVEL:0 LINE:8 "D:\code vision\inc\string.h"
+NODE:I LEVEL:0 LINE:9 "D:\code vision\inc\delay.h"
+NODE:I LEVEL:0 LINE:10 ".\source\myheader.h"

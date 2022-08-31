@@ -1,0 +1,21 @@
+
+#ifndef _alleaders_INCLUDED_
+#define _allheaders_INCLUDED_
+
+#include <mega16.h>
+#include <alcd.h>
+#include <stdio.h>
+#include <delay.h>
+#include <stdlib.h>
+#include <string.h>
+#include ".\source\myheader.h"
+
+
+char extern data_key[]={
+                '0','1','2','3',
+                '4','5','6','7',
+                '8','9','A','B',
+                'C','D','E','F'};
+
+
+#endif

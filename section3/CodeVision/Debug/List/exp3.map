@@ -1,0 +1,43 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+data_key                                                                          0x016C      16
+_base_y                                                                           0x017C       4
+_seed                                                                             0x0180       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+_lcd_x                                                                            R5           1
+_lcd_y                                                                            R4           1
+_lcd_maxx                                                                         R7           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+ext_int1_isr                                                                      0x000E6      1
+main                                                                              0x000E7     35
+keypad2                                                                           0x0010A     76
+Q5                                                                                0x00156    272
+Q5_2                                                                              0x00266    171
+Q5_3                                                                              0x00311    159
+Q5_4                                                                              0x003B0    271
+_lcd_write_nibble_G100                                                            0x004BF     20
+_lcd_write_data                                                                   0x004D3     12
+lcd_gotoxy                                                                        0x004DF     13
+lcd_clear                                                                         0x004EC     18
+lcd_putchar                                                                       0x004FE     21
+lcd_puts                                                                          0x00513     17
+lcd_init                                                                          0x00524     58
+put_buff_G101                                                                     0x0055E     64
+_print_G101                                                                       0x0059E    372
+sprintf                                                                           0x00712     60
+atoi                                                                              0x0074E     55
+strlen                                                                            0x00785     12
+strlenf                                                                           0x00791     13
+isdigit                                                                           0x0079E      9
+isspace                                                                           0x007A7     11

@@ -1,0 +1,426 @@
+
+#include ".\source\allheaders.h"
+
+
+char data_key[]={
+                '0','1','2','3',
+                '4','5','6','7',
+                '8','9','A','B',
+                'C','D','E','F'};
+
+void Q1(void)
+{
+char name_stdnum[30];
+
+lcd_clear();
+sprintf(name_stdnum,"AmirrezaHosseini\n    9820363");
+lcd_puts(name_stdnum);
+}
+
+void Q2(void)
+{
+  char text[80];
+  int i=0;
+  char buffer[20];
+  
+  sprintf(text,"Welcome to the Microprocessor lab classes in Isfahan University of Technology.                      ");  
+  
+  for(i=0;i<80;i++)
+  {   
+         lcd_clear(); 
+         strncpy(buffer,&text[i],16);
+         lcd_puts(buffer);
+   
+         sprintf(buffer,'');
+         delay_ms(150);
+  }
+
+
+}
+
+
+void Q3(void){
+            
+        lcd_gotoxy(0,0);
+        lcd_putchar( data_key[keypad2()]);
+       
+        delay_ms(150);
+      
+}
+
+char keypad2(void)
+{
+    int r;
+    char key=100;
+    char row[4]={0x10,0x20,0x40,0x80}; 
+    int c;
+    for (r=0;r<4;r++)
+    {
+        PORTB=row[r];
+        c=20;
+        delay_ms(10);
+            if (PINB.0==1) c=0;
+            if (PINB.1==1) c=1;
+            if (PINB.2==1) c=2;
+            if (PINB.3==1) c=3;
+            if (!(c==20)){
+        key=(r*4)+c;
+        PORTB=0xf0;
+            while (PINB.0==1) {}
+            while (PINB.1==1) {}
+            while (PINB.2==1) {}
+            while (PINB.3==1) {}
+        }
+        PORTB=0xf0;
+    } 
+    
+    return key;
+}
+
+void Q5(void)
+{
+    char speed[20];
+    int i;
+    char temp='';
+    char temp2='';
+    char temp3[2]; 
+    int flag=0;
+    int complete=0;
+    char keyret;
+    int total=1000;
+    
+    
+    for(i=0;i<2;i++)
+    {             
+        lcd_clear();
+        lcd_putchar('i');
+        delay_ms(200);
+        lcd_putchar('n');
+        delay_ms(200);
+        lcd_putchar('i');
+        delay_ms(200);
+        lcd_putchar('t');
+        delay_ms(200);
+        lcd_putchar('i');
+        delay_ms(200);
+        lcd_putchar('a');
+        delay_ms(200);
+        lcd_putchar('i');
+        delay_ms(200);
+        lcd_putchar('l');
+        delay_ms(200);
+        lcd_putchar('.');
+        delay_ms(300);
+        lcd_putchar('.');
+        delay_ms(300);
+        lcd_putchar('.');
+        delay_ms(300);
+    }
+    
+    delay_ms(500);  
+    
+    lcd_clear(); 
+    sprintf(speed,"Speed:??(0-50r)");
+    lcd_puts(speed);
+    
+    while(1)
+    {           
+        if(flag==0)
+        {
+            keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp=data_key[keyret];
+                lcd_gotoxy(6,0);
+                delay_ms(20);
+                lcd_puts(&temp);
+                flag=1; 
+            }
+         }
+          
+        delay_ms(20); 
+        
+        if(flag==1)
+        {  
+             keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp2=data_key[keyret];
+                lcd_gotoxy(7,0);
+                delay_ms(20);
+                lcd_puts(&temp2); 
+                complete=1;
+            }
+        }
+        
+         temp3[0]=temp;
+         temp3[1]=temp2;
+      // sprintf(temp3,"%c%c",temp,temp2);
+      total= atoi(temp3);
+       if(total<=50 && total>=0 && complete==1)
+       {    
+            break;
+       }
+       if((total>50 || total<0) && complete==1)
+       {     
+            temp='';
+            temp2='';
+            sprintf(temp3,'');
+            flag=0;
+            complete=0; 
+            total=1000;
+            lcd_gotoxy(6,0);
+            lcd_puts("EE");
+       }
+    }
+
+}
+
+void Q5_2(void)
+{
+    char time[20];
+    char temp='';
+    char temp2='';
+    char temp3[2]; 
+    int flag=0;
+    int complete=0;
+    char keyret;
+    int total=1000; 
+    
+    
+     lcd_clear(); 
+    sprintf(time,"Time:??(0-99s)");
+    lcd_puts(time);
+    
+    while(1)
+    {  
+    delay_ms(50);          
+        if(flag==0)
+        {
+            keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp=data_key[keyret]; 
+                lcd_gotoxy(5,0);
+                delay_ms(20);
+                lcd_puts(&temp);
+                flag=1; 
+            }
+         }
+          
+        delay_ms(20); 
+        
+        if(flag==1)
+        {  
+             keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp2=data_key[keyret];
+                lcd_gotoxy(6,0);
+                lcd_puts(&temp2); 
+                complete=1;
+                flag=2;
+            }
+        }
+        
+         temp3[0]=temp;
+         temp3[1]=temp2;
+      // sprintf(temp3,"%c%c",temp,temp2);
+      total= atoi(temp3);
+       if(total<=99 && total>=0 && complete==1)
+       {    
+            break;
+       }
+       if((total>99 || total<0) && complete==1)
+       {     
+            temp='';
+            temp2='';
+            sprintf(temp3,'');
+            flag=0;
+            complete=0; 
+            total=1000;
+            lcd_gotoxy(6,0);
+            lcd_puts("EE");
+       }
+    }
+
+}
+ 
+
+
+void Q5_3(void)
+{
+    char w[20];
+    char temp='';
+    char temp2='';
+    char temp3[2]; 
+    int flag=0;
+    int complete=0;
+    char keyret;
+    int total=1000;
+    
+    
+    lcd_clear();
+    sprintf(w,"W:??(0-99Kg)");
+    lcd_puts(w); 
+    
+
+    while(1)
+    {           
+        if(flag==0)
+        {  
+         delay_ms(20);
+            keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp=data_key[keyret];
+                lcd_gotoxy(2,0);
+                lcd_puts(&temp);
+                flag=1; 
+            }
+         }
+          
+        
+        if(flag==1)
+        {  
+             keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp2=data_key[keyret];
+                lcd_gotoxy(3,0);
+                lcd_puts(&temp2); 
+                complete=1;
+            }
+        }
+        
+         temp3[0]=temp;
+         temp3[1]=temp2;
+      // sprintf(temp3,"%c%c",temp,temp2);
+      total= atoi(temp3);
+       if(total<=99 && total>=0 && complete==1)
+       {    
+            flag=0;
+            complete=0;
+            break;
+       }
+       if((total>99 || total<0) && complete==1)
+       {     
+            temp='';
+            temp2='';
+            flag=0;
+            complete=0; 
+            total=1000;
+            lcd_gotoxy(2,0);
+            lcd_puts("EE");
+       }
+    }
+
+}
+
+
+void Q5_4(void)
+{
+    char TEMP[30];
+    char temp='';
+    char temp2='';
+    char temp3[2]; 
+    int flag=0;
+    int complete=0;
+    char keyret;
+    int total=1000; 
+    int i;
+    
+    
+    lcd_clear();
+    sprintf(TEMP,"Temp:??(20-80C)");
+    lcd_puts(TEMP); 
+    
+
+    while(1)
+    {   
+        delay_ms(20);        
+        if(flag==0)
+        {  
+         delay_ms(20);
+            keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp=data_key[keyret];
+                delay_ms(20);
+                lcd_gotoxy(5,0);
+                delay_ms(20);
+                lcd_puts(&temp);
+                flag=1; 
+            }
+         }
+          
+        delay_ms(20);
+        if(flag==1)
+        {  
+             keyret= keypad2();
+            if(keyret<=16 && keyret>=0)
+            {
+                temp2=data_key[keyret];
+                
+                delay_ms(20);
+                lcd_gotoxy(6,0);
+                delay_ms(20);
+                lcd_puts(&temp2); 
+                complete=1;
+            }
+        }
+        
+         temp3[0]=temp;
+         temp3[1]=temp2;
+      // sprintf(temp3,"%c%c",temp,temp2);
+      total= atoi(temp3);
+      delay_ms(20);
+       if(total<=80 && total>=20 && complete==1)
+       {    
+            flag=0;
+            complete=0;
+            break;
+       }
+       if((total>80 || total<20) && complete==1)
+       {     
+            temp='';
+            temp2='';
+            flag=0;
+            complete=0; 
+            total=1000;
+            lcd_gotoxy(5,0);
+            lcd_puts("EE");
+            delay_ms(20);
+       }
+    } 
+    
+    delay_ms(500);
+    
+    for(i=0;i<2;i++)
+    {             
+        lcd_clear();
+        lcd_putchar('C');
+        delay_ms(200);
+        lcd_putchar('o');
+        delay_ms(200);
+        lcd_putchar('m');
+        delay_ms(200);
+        lcd_putchar('p');
+        delay_ms(200);
+        lcd_putchar('l');
+        delay_ms(200);
+        lcd_putchar('e');
+        delay_ms(200);
+        lcd_putchar('t');
+        delay_ms(200);
+        lcd_putchar('e');
+        delay_ms(200);
+        lcd_putchar('.');
+        delay_ms(300);
+        lcd_putchar('.');
+        delay_ms(300);
+        lcd_putchar('.');
+        delay_ms(300);
+    }
+     
+}

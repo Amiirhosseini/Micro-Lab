@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:54656E40
+NODE:M LEVEL:0 LINE:2 "_AllHeaders_INCLUDED_"
+NODE:I LEVEL:0 LINE:4 "D:\code vision\inc\mega16.h"
+NODE:I LEVEL:0 LINE:5 "D:\code vision\inc\delay.h"
+NODE:I LEVEL:0 LINE:6 ".\source\myheader.h"
+NODE:M LEVEL:0 LINE:9 "port_A"
+NODE:M LEVEL:0 LINE:10 "port_B"
+NODE:M LEVEL:0 LINE:11 "port_C"
+NODE:M LEVEL:0 LINE:12 "port_D"

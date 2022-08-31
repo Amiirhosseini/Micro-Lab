@@ -1,0 +1,13 @@
+VERSION:3 SOURCE_TIMESTAMP:54578CF9
+NODE:I LEVEL:0 LINE:24 "D:\code vision\inc\mega16.h"
+NODE:I LEVEL:0 LINE:25 "D:\code vision\inc\delay.h"
+NODE:V LEVEL:0 LINE:27 "hexvalue -> RAM:????"
+NODE:V LEVEL:0 LINE:28 "number -> R4,R5"
+NODE:F LEVEL:0 LINE:39 "main(void)"
+NODE:F LEVEL:0 LINE:81 "Q1(void)"
+NODE:F LEVEL:0 LINE:93 "Q2(void)"
+NODE:F LEVEL:0 LINE:125 "Q3(void)"
+NODE:F LEVEL:0 LINE:130 "Q4(void)"
+NODE:F LEVEL:0 LINE:147 "Q5(void)"
+NODE:F LEVEL:0 LINE:162 "Q6(void)"
+NODE:F LEVEL:0 LINE:187 "show_numb(int numb)"

@@ -1,0 +1,13 @@
+VERSION:3 SOURCE_TIMESTAMP:54ACB84E
+NODE:I LEVEL:0 LINE:4 ".\source\headers.h"
+NODE:I LEVEL:0 LINE:5 ".\source\clock.h"
+NODE:V LEVEL:0 LINE:10 "status_degree -> RAM:????"
+NODE:F LEVEL:0 LINE:14 "Draw_clock_hand(int xcoordinate,int ycoordinate)"
+NODE:F LEVEL:0 LINE:20 "degree_to_radian(float degree)"
+NODE:F LEVEL:0 LINE:28 "min_x_coordinate_finder(unsigned int min,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:42 "min_y_coordinate_finder(unsigned int min,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:55 "sec_x_coordinate_finder(unsigned int sec,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:67 "sec_y_coordinate_finder(unsigned int sec,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:79 "hr_x_coordinate_finder(unsigned int hr,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:92 "hr_y_coordinate_finder(unsigned int hr,unsigned int radius,float degree)"
+NODE:F LEVEL:0 LINE:109 "Draw_clock(unsigned int hr,unsigned int min,unsigned int sec)"
